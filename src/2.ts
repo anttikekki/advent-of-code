@@ -27,10 +27,26 @@ export const day2 = () => {
 
     if (matchCount >= minCount && matchCount <= maxCount) {
       correctCount++
-      console.log(`\n`)
       console.log(`Match: ${line}`)
-      console.log(`${password} contains ${letter} ${matchCount} times`)
+      console.log(`\n`)
     }
   })
-  console.log(`Found ${correctCount} correct password`)
+  console.log(`Found ${correctCount} correct passwords`)
+
+  console.log(`\n`)
+  console.log("Day 2 puzzle 2:")
+
+  correctCount = 0
+  data.forEach(({ line, minCount, maxCount, password, letter }) => {
+    const passwordLetters = password.split("")
+    const firstMatch = passwordLetters[minCount - 1] === letter
+    const secondMatch = passwordLetters[maxCount - 1] === letter
+
+    if (firstMatch !== secondMatch) {
+      correctCount++
+      console.log(`Match: ${line}`)
+      console.log(`\n`)
+    }
+  })
+  console.log(`Found ${correctCount} correct passwords`)
 }
