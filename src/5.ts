@@ -77,4 +77,19 @@ export const day5 = () => {
 
   console.log("\nDay 5 puzzle 1 max seat id:")
   console.log(`Max seat ID: ${getMaxSeatId(dataFile)}`)
+
+  console.log("\nDay 5 puzzle 2:")
+  const seatIds = dataFile.split("\n").map(getSeatId)
+  seatIds.sort((a, b) => a - b)
+  for (let i = 0; i < seatIds.length; i++) {
+    if (i + 1 >= seatIds.length) {
+      continue
+    }
+    const currentId = seatIds[i]
+    const nextId = seatIds[i + 1]
+
+    if (currentId + 1 !== nextId) {
+      console.log(`Seat id ${currentId + 1} is missing from list`)
+    }
+  }
 }
