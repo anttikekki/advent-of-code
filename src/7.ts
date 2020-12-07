@@ -46,20 +46,54 @@ const findColor = (rules: Array<Rule>, rule: Rule, color: string): boolean => {
     if (rule) {
       return findColor(rules, rule, color)
     }
-    return false
+    throw Error(`Unknown color ${color}`)
   })
 }
 
 const countBagColors = (file: string, color: string): number => {
   const rules = parseRules(file)
-
   const matchingRules = rules.filter((rule) => findColor(rules, rule, color))
-
   return matchingRules.length
 }
 
-const exampleFile = String(
-  fs.readFileSync(path.resolve(__dirname, `../resources/7/example.txt`))
+const countBagsForRule = (rules: Array<Rule>, rule: Rule): number => {
+  const subBagsCount = rule.includedColors.length
+  if (subBagsCount === 0) {
+    console.log(`1 bags for color ${rule.color}`)
+    return 1
+  }
+  const subBags = rule.includedColors.map(({ count, color }) => {
+    const nextRule = getRuleForColor(rules, color)
+    if (nextRule) {
+      const countResult = countBagsForRule(rules, nextRule)
+      const result = countResult * count
+      console.log(
+        `${countResult} (from ${nextRule.color}) * ${count} = ${result} bags of color ${color}`
+      )
+      return result
+    }
+    throw Error(`Unknown color ${color}`)
+  })
+  const subBagSum = subBags.reduce((prev, current) => prev + current, 0)
+
+  console.log(
+    `${subBags.join(" + ")} = ${subBagSum} bags for color ${rule.color}`
+  )
+  return subBagSum
+}
+
+const countBags = (file: string): number => {
+  const rules = parseRules(file)
+  const rule = getRuleForColor(rules, "shiny gold")
+
+  return countBagsForRule(rules, rule!)
+}
+
+const puzzle1ExampleFile = String(
+  fs.readFileSync(path.resolve(__dirname, `../resources/7/puzzle1Example.txt`))
+)
+const puzzle2ExampleFile = String(
+  fs.readFileSync(path.resolve(__dirname, `../resources/7/puzzle2Example.txt`))
 )
 const dataFile = String(
   fs.readFileSync(path.resolve(__dirname, `../resources/7/data.txt`))
@@ -68,9 +102,15 @@ const dataFile = String(
 export const day7 = () => {
   console.log("\nDay 7 puzzle 1 example: (number of bag colors should be 4)")
   console.log(
-    `Number of bag colors: ${countBagColors(exampleFile, "shiny gold")}`
+    `Number of bag colors: ${countBagColors(puzzle1ExampleFile, "shiny gold")}`
   )
 
   console.log("\nDay 7 puzzle 1:")
   console.log(`Number of bag colors: ${countBagColors(dataFile, "shiny gold")}`)
+
+  console.log("\nDay 7 puzzle 2 example 1: (should contain 32 other bags)")
+  console.log(`Bags: ${countBags(puzzle1ExampleFile)}`)
+
+  //console.log("\nDay 7 puzzle 2 example 2: (should contain 126 other bags)")
+  //console.log(`Bags: ${countBags(puzzle2ExampleFile)}`)
 }
