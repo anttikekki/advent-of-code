@@ -5,6 +5,7 @@ import { day4 } from "./4"
 import { day5 } from "./5"
 import { day6 } from "./6"
 import { day7 } from "./7"
+import { day8 } from "./8"
 
 var day = process.argv[2]
 console.log("Runnin day ", day)
@@ -30,6 +31,9 @@ switch (day) {
     break
   case "7":
     day7()
+    break
+  case "8":
+    day8()
     break
   default:
     console.log("Unknown day: ", day)
