@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 
 export const day1 = () => {
-  const filePath = path.resolve(__dirname, "../resources/1/data.txt")
+  const filePath = path.resolve(__dirname, "../../resources/2020/1/data.txt")
   const file = fs.readFileSync(filePath)
   const data = new String(file).split("\n").map(Number)
 

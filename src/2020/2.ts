@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 
 export const day2 = () => {
-  const filePath = path.resolve(__dirname, "../resources/2/data.txt")
+  const filePath = path.resolve(__dirname, "../../resources/2020/2/data.txt")
   const file = fs.readFileSync(filePath)
 
   console.log("Day 2 puzzle 1:")

@@ -116,10 +116,10 @@ const modifyOperationsToEndAtFileEnd = (file: string): Array<Operation> => {
 }
 
 const exampleFile = String(
-  fs.readFileSync(path.resolve(__dirname, `../resources/8/example.txt`))
+  fs.readFileSync(path.resolve(__dirname, `../../resources/2020/8/example.txt`))
 )
 const dataFile = String(
-  fs.readFileSync(path.resolve(__dirname, `../resources/8/data.txt`))
+  fs.readFileSync(path.resolve(__dirname, `../../resources/2020/8/data.txt`))
 )
 
 export const day8 = () => {

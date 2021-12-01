@@ -30,10 +30,10 @@ const sumAnswers = (file: string, sumOnlyQuestionsThatAllAnswered: boolean) => {
 }
 
 const exampleFile = String(
-  fs.readFileSync(path.resolve(__dirname, `../resources/6/example.txt`))
+  fs.readFileSync(path.resolve(__dirname, `../../resources/2020/6/example.txt`))
 )
 const dataFile = String(
-  fs.readFileSync(path.resolve(__dirname, `../resources/6/data.txt`))
+  fs.readFileSync(path.resolve(__dirname, `../../resources/2020/6/data.txt`))
 )
 
 export const day6 = () => {

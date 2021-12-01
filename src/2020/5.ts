@@ -53,10 +53,10 @@ const getMaxSeatId = (file: string): number => {
 }
 
 const exampleFile = String(
-  fs.readFileSync(path.resolve(__dirname, `../resources/5/example.txt`))
+  fs.readFileSync(path.resolve(__dirname, `../../resources/2020/5/example.txt`))
 )
 const dataFile = String(
-  fs.readFileSync(path.resolve(__dirname, `../resources/5/data.txt`))
+  fs.readFileSync(path.resolve(__dirname, `../../resources/2020/5/data.txt`))
 )
 
 export const day5 = () => {

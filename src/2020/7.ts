@@ -18,15 +18,13 @@ const parseRules = (file: string): Array<Rule> => {
     const includedBagColors = includedBagColorsLine
       .split(", ")
       .filter((v) => v !== "no other bags.")
-      .map(
-        (includedBagColorToken): IncludedColor => {
-          // 1 bright white bag
-          const tokens = includedBagColorToken.split(" ")
-          const bagCount = parseInt(tokens[0]) // 1
-          const bagColor = `${tokens[1]} ${tokens[2]}` // bright white
-          return { count: bagCount, color: bagColor }
-        }
-      )
+      .map((includedBagColorToken): IncludedColor => {
+        // 1 bright white bag
+        const tokens = includedBagColorToken.split(" ")
+        const bagCount = parseInt(tokens[0]) // 1
+        const bagColor = `${tokens[1]} ${tokens[2]}` // bright white
+        return { count: bagCount, color: bagColor }
+      })
     return { color: bagColor, includedColors: includedBagColors }
   })
 
@@ -90,13 +88,17 @@ const countBags = (file: string): number => {
 }
 
 const puzzle1ExampleFile = String(
-  fs.readFileSync(path.resolve(__dirname, `../resources/7/puzzle1Example.txt`))
+  fs.readFileSync(
+    path.resolve(__dirname, `../../resources/2020/7/puzzle1Example.txt`)
+  )
 )
 const puzzle2ExampleFile = String(
-  fs.readFileSync(path.resolve(__dirname, `../resources/7/puzzle2Example.txt`))
+  fs.readFileSync(
+    path.resolve(__dirname, `../../resources/2020/7/puzzle2Example.txt`)
+  )
 )
 const dataFile = String(
-  fs.readFileSync(path.resolve(__dirname, `../resources/7/data.txt`))
+  fs.readFileSync(path.resolve(__dirname, `../../resources/2020/7/data.txt`))
 )
 
 export const day7 = () => {

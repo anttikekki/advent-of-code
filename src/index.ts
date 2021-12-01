@@ -1,14 +1,15 @@
-import { day1 } from "./1"
-import { day2 } from "./2"
-import { day3 } from "./3"
-import { day4 } from "./4"
-import { day5 } from "./5"
-import { day6 } from "./6"
-import { day7 } from "./7"
-import { day8 } from "./8"
+import { day1 } from "./2020/1"
+import { day2 } from "./2020/2"
+import { day3 } from "./2020/3"
+import { day4 } from "./2020/4"
+import { day5 } from "./2020/5"
+import { day6 } from "./2020/6"
+import { day7 } from "./2020/7"
+import { day8 } from "./2020/8"
 
-var day = process.argv[2]
-console.log("Runnin day ", day)
+const year = process.argv[2]
+const day = process.argv[3]
+console.log("Runnin year ", year, " day ", day)
 
 switch (day) {
   case "1":
@@ -36,5 +37,5 @@ switch (day) {
     day8()
     break
   default:
-    console.log("Unknown day: ", day)
+    console.error("Unknown year ", year, " day ", day)
 }

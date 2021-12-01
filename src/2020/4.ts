@@ -113,19 +113,21 @@ const puzzle2Validator = (passport: Passport): boolean => {
 }
 
 const puzzle1ExampleData = String(
-  fs.readFileSync(path.resolve(__dirname, `../resources/4/puzzle1Example.txt`))
+  fs.readFileSync(
+    path.resolve(__dirname, `../../resources/2020/4/puzzle1Example.txt`)
+  )
 )
 const mainData = String(
-  fs.readFileSync(path.resolve(__dirname, `../resources/4/data.txt`))
+  fs.readFileSync(path.resolve(__dirname, `../../resources/2020/4/data.txt`))
 )
 const puzzle2InvalidExampleData = String(
   fs.readFileSync(
-    path.resolve(__dirname, `../resources/4/puzzle2InvalidExample.txt`)
+    path.resolve(__dirname, `../../resources/2020/4/puzzle2InvalidExample.txt`)
   )
 )
 const puzzle2ValidExampleData = String(
   fs.readFileSync(
-    path.resolve(__dirname, `../resources/4/puzzle2ValidExample.txt`)
+    path.resolve(__dirname, `../../resources/2020/4/puzzle2ValidExample.txt`)
   )
 )
 

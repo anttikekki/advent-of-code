@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 
 const test = (filename: string, right: number, down: number) => {
-  const filePath = path.resolve(__dirname, `../resources/3/${filename}`)
+  const filePath = path.resolve(__dirname, `../../resources/2020/3/${filename}`)
   const file = fs.readFileSync(filePath)
 
   const map = new String(file).split("\n").map((line) => line.split(""))

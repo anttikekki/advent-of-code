@@ -1,7 +1,9 @@
 {
   "name": "advent-of-code",
+  "description": "Advent of Code suorituksia vuosille 2020 ja 2021",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "private": true,
   "scripts": {
     "start": "npm run build && node .",
     "build": "tsc --build"
@@ -10,8 +12,11 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "14.14.10",
-    "prettier": "2.1.2",
-    "typescript": "4.1.2"
+    "@types/node": "16.11.11",
+    "prettier": "2.5.0",
+    "typescript": "4.5.2"
+  },
+  "engines": {
+    "node": "v16.13.0"
   }
 }
