@@ -59,26 +59,34 @@ const dataFile = String(
   fs.readFileSync(path.resolve(__dirname, `../../resources/2020/5/data.txt`))
 )
 
-export const day5 = () => {
-  console.log("\nDay 5 puzzle 1 example 1 FBFBBFFRLR: (seat ID should be 357)")
+export const day5_2020 = () => {
+  console.log(
+    "\n2020 Day 5 puzzle 1 example 1 FBFBBFFRLR: (seat ID should be 357)"
+  )
   console.log(`Seat ID: ${getSeatId("FBFBBFFRLR")}`)
 
-  console.log("\nDay 5 puzzle 1 example 2 BFFFBBFRRR: (seat ID should be 567)")
+  console.log(
+    "\n2020 Day 5 puzzle 1 example 2 BFFFBBFRRR: (seat ID should be 567)"
+  )
   console.log(`Seat ID: ${getSeatId("BFFFBBFRRR")}`)
 
-  console.log("\nDay 5 puzzle 1 example 3 FFFBBBFRRR: (seat ID should be 119)")
+  console.log(
+    "\n2020 Day 5 puzzle 1 example 3 FFFBBBFRRR: (seat ID should be 119)"
+  )
   console.log(`Seat ID: ${getSeatId("FFFBBBFRRR")}`)
 
-  console.log("\nDay 5 puzzle 1 example 4 BBFFBBFRLL: (seat ID should be 820)")
+  console.log(
+    "\n2020 Day 5 puzzle 1 example 4 BBFFBBFRLL: (seat ID should be 820)"
+  )
   console.log(`Seat ID: ${getSeatId("BBFFBBFRLL")}`)
 
-  console.log("\nDay 5 puzzle 1 example max seat id: (should be 820)")
+  console.log("\n2020 Day 5 puzzle 1 example max seat id: (should be 820)")
   console.log(`Max seat ID: ${getMaxSeatId(exampleFile)}`)
 
-  console.log("\nDay 5 puzzle 1 max seat id:")
+  console.log("\n2020 Day 5 puzzle 1 max seat id:")
   console.log(`Max seat ID: ${getMaxSeatId(dataFile)}`)
 
-  console.log("\nDay 5 puzzle 2:")
+  console.log("\n2020 Day 5 puzzle 2:")
   const seatIds = dataFile.split("\n").map(getSeatId)
   seatIds.sort((a, b) => a - b)
   for (let i = 0; i < seatIds.length; i++) {

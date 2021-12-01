@@ -131,23 +131,23 @@ const puzzle2ValidExampleData = String(
   )
 )
 
-export const day4 = () => {
-  console.log("Day 4 puzzle 1 with example data: (result should be 2)")
+export const day4_2020 = () => {
+  console.log("2020 Day 4 puzzle 1 with example data: (result should be 2)")
   console.log(`Valid passports: ${test(puzzle1ExampleData, puzzle1Validator)}`)
 
-  console.log("\nDay 4 puzzle 1: (should be 247)")
+  console.log("\n2020 Day 4 puzzle 1: (should be 247)")
   console.log(`Valid passports: ${test(mainData, puzzle1Validator)}`)
 
-  console.log("\nDay 4 puzzle 2 invalid example data: (should be 0)")
+  console.log("\n2020 Day 4 puzzle 2 invalid example data: (should be 0)")
   console.log(
     `Valid passports: ${test(puzzle2InvalidExampleData, puzzle2Validator)}`
   )
 
-  console.log("\nDay 4 puzzle 2 valid example data: (should be 4)")
+  console.log("\n2020 Day 4 puzzle 2 valid example data: (should be 4)")
   console.log(
     `Valid passports: ${test(puzzle2ValidExampleData, puzzle2Validator)}`
   )
 
-  console.log("\nDay 4 puzzle 2:")
+  console.log("\n2020 Day 4 puzzle 2:")
   console.log(`Valid passports: ${test(mainData, puzzle2Validator)}`)
 }

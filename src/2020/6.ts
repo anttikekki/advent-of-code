@@ -36,16 +36,16 @@ const dataFile = String(
   fs.readFileSync(path.resolve(__dirname, `../../resources/2020/6/data.txt`))
 )
 
-export const day6 = () => {
-  console.log("\nDay 6 puzzle 1 example: (sum should be 11)")
+export const day6_2020 = () => {
+  console.log("\n2020 Day 6 puzzle 1 example: (sum should be 11)")
   console.log(`Sum: ${sumAnswers(exampleFile, false)}`)
 
-  console.log("\nDay 6 puzzle 1:")
+  console.log("\n2020 Day 6 puzzle 1:")
   console.log(`Sum: ${sumAnswers(dataFile, false)}`)
 
-  console.log("\nDay 6 puzzle 2 example: (sum should be 6)")
+  console.log("\n2020 Day 6 puzzle 2 example: (sum should be 6)")
   console.log(`Sum: ${sumAnswers(exampleFile, true)}`)
 
-  console.log("\nDay 6 puzzle 2:")
+  console.log("\n2020 Day 6 puzzle 2:")
   console.log(`Sum: ${sumAnswers(dataFile, true)}`)
 }

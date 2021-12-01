@@ -1,11 +1,11 @@
 import fs from "fs"
 import path from "path"
 
-export const day2 = () => {
+export const day2_2020 = () => {
   const filePath = path.resolve(__dirname, "../../resources/2020/2/data.txt")
   const file = fs.readFileSync(filePath)
 
-  console.log("Day 2 puzzle 1:")
+  console.log("2020 Day 2 puzzle 1:")
 
   const data = new String(file).split("\n").map((line) => {
     //Line:  "1-3 a: abcde"

@@ -122,18 +122,18 @@ const dataFile = String(
   fs.readFileSync(path.resolve(__dirname, `../../resources/2020/8/data.txt`))
 )
 
-export const day8 = () => {
-  console.log("\nDay 8 puzzle 1 example: (should be 5)")
+export const day8_2020 = () => {
+  console.log("\n2020 Day 8 puzzle 1 example: (should be 5)")
   console.log(
     `Accumulator: ${runOperations(parseOperations(exampleFile)).accumulator}`
   )
 
-  console.log("\nDay 8 puzzle 1:")
+  console.log("\n2020 Day 8 puzzle 1:")
   console.log(
     `Accumulator: ${runOperations(parseOperations(dataFile)).accumulator}`
   )
 
-  console.log("\nDay 8 puzzle 2:")
+  console.log("\n2020 Day 8 puzzle 2:")
   console.log(
     `Accumulator: ${
       runOperations(modifyOperationsToEndAtFileEnd(dataFile), false, true)

@@ -1,12 +1,12 @@
 import fs from "fs"
 import path from "path"
 
-export const day1 = () => {
+export const day1_2020 = () => {
   const filePath = path.resolve(__dirname, "../../resources/2020/1/data.txt")
   const file = fs.readFileSync(filePath)
   const data = new String(file).split("\n").map(Number)
 
-  console.log("Day 1 puzzle 1:")
+  console.log("2020 Day 1 puzzle 1:")
   data.forEach((value1) => {
     data.forEach((value2) => {
       if (value1 + value2 === 2020) {

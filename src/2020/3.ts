@@ -37,8 +37,8 @@ const test = (filename: string, right: number, down: number) => {
   return trees
 }
 
-export const day3 = () => {
-  console.log("Day 3 puzzle 1 with example data: (should be 7)")
+export const day3_2020 = () => {
+  console.log("2020 Day 3 puzzle 1 with example data: (should be 7)")
   test("example.txt", 3, 1)
 
   console.log("\nDay 3 puzzle 1: (should be 299)")

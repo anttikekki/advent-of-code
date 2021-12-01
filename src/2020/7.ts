@@ -101,16 +101,18 @@ const dataFile = String(
   fs.readFileSync(path.resolve(__dirname, `../../resources/2020/7/data.txt`))
 )
 
-export const day7 = () => {
-  console.log("\nDay 7 puzzle 1 example: (number of bag colors should be 4)")
+export const day7_2020 = () => {
+  console.log(
+    "\n2020 Day 7 puzzle 1 example: (number of bag colors should be 4)"
+  )
   console.log(
     `Number of bag colors: ${countBagColors(puzzle1ExampleFile, "shiny gold")}`
   )
 
-  console.log("\nDay 7 puzzle 1:")
+  console.log("\n2020 Day 7 puzzle 1:")
   console.log(`Number of bag colors: ${countBagColors(dataFile, "shiny gold")}`)
 
-  console.log("\nDay 7 puzzle 2 example 1: (should contain 32 other bags)")
+  console.log("\n2020 Day 7 puzzle 2 example 1: (should contain 32 other bags)")
   console.log(`Bags: ${countBags(puzzle1ExampleFile)}`)
 
   //console.log("\nDay 7 puzzle 2 example 2: (should contain 126 other bags)")
