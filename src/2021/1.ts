@@ -58,6 +58,9 @@ const calculateDepthIncrementThreeMeasurementSlidingWindow = (
   return calculateDepthIncrementCount(result)
 }
 
+/**
+ * @see https://adventofcode.com/2021/day/1
+ */
 export const day1_2021 = () => {
   console.log("2021 Day 1 puzzle 1 example:")
   const exampleData = loadFileRows(2021, 1, "example.txt").map(Number)

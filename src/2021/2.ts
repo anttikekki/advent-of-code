@@ -56,6 +56,9 @@ const calculateWithAim = (commands: Array<string>) => {
   }
 }
 
+/**
+ * @see https://adventofcode.com/2021/day/2
+ */
 export const day2_2021 = () => {
   console.log("2021 Day 2 puzzle 1 example:")
   const exampleData = loadFileRows(2021, 2, "example.txt")
