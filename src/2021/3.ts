@@ -113,7 +113,7 @@ const calculateLifeSupportRating = (data: Array<string>) => {
  * @see https://adventofcode.com/2021/day/3
  */
 export const day3_2021 = () => {
-  console.log("2021 Day 1 puzzle 1 example:")
+  console.log("2021 Day 3 puzzle 1 example:")
   const exampleData = loadFileRows(2021, 3, "example.txt")
 
   /*
@@ -140,7 +140,7 @@ export const day3_2021 = () => {
   console.log("Epsilon rate (should be 9):", result1.epsilonRate)
   console.log("Power consumption (should be 198):", result1.powerConsumption)
 
-  console.log("\n2021 Day 1 puzzle 1:")
+  console.log("\n2021 Day 3 puzzle 1:")
   const data = loadFileRows(2021, 3, "data.txt")
   const result2 = calculatePowerConsumption(data)
   console.log("Gamma rate binary:", result2.gammaRateBinary)
@@ -149,7 +149,7 @@ export const day3_2021 = () => {
   console.log("Epsilon rate:", result2.epsilonRate)
   console.log("Power consumption:", result2.powerConsumption)
 
-  console.log("\n2021 Day 1 puzzle 2 example:")
+  console.log("\n2021 Day 3 puzzle 2 example:")
   const result3 = calculateLifeSupportRating(exampleData)
   console.log(
     "Oxygen generator rating binary (should be 10111):",
@@ -166,7 +166,7 @@ export const day3_2021 = () => {
   console.log("CO2 scrubber rating (should be 10):", result3.CO2ScrubberRating)
   console.log("Life support rating (should be 230):", result3.lifeSupportRating)
 
-  console.log("\n2021 Day 1 puzzle 2:")
+  console.log("\n2021 Day 3 puzzle 2:")
   const result4 = calculateLifeSupportRating(data)
   console.log(
     "Oxygen generator rating binary:",
