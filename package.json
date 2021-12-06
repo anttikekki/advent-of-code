@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "npm run build && node .",
-    "build": "tsc --build"
+    "build": "tsc --build --incremental"
   },
   "author": "Antti Kekki",
   "license": "MIT",
