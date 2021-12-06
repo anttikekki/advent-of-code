@@ -7,6 +7,7 @@ type Line = {
   y2: number
   horizontal: boolean
   vertical: boolean
+  diagonal: boolean
 }
 type Coordinate = { x: number; y: number; lines: Array<Line> }
 type Map = Array<Array<Coordinate>>
@@ -27,7 +28,8 @@ const parseLines = (data: Array<string>): Array<Line> => {
         x2,
         y2,
         horizontal: y1 === y2,
-        vertical: x1 === x2
+        vertical: x1 === x2,
+        diagonal: y1 !== y2 && x1 !== x2
       }
     })
   return lines
@@ -71,6 +73,26 @@ const drawLinesToMap = (map: Map, lines: Array<Line>) => {
           y--
         }
         if (y === line.y2) {
+          markCoordinateOnMap(x, y, line, map)
+        }
+      }
+    }
+    if (line.diagonal) {
+      while (y !== line.y2 && x !== line.x2) {
+        markCoordinateOnMap(x, y, line, map)
+        if (x < line.x2) {
+          x++
+        }
+        if (x > line.x2) {
+          x--
+        }
+        if (y < line.y2) {
+          y++
+        }
+        if (y > line.y2) {
+          y--
+        }
+        if (y === line.y2 && x === line.x2) {
           markCoordinateOnMap(x, y, line, map)
         }
       }
@@ -129,7 +151,7 @@ const printMap = (map: Map) => {
   }
 }
 
-const calculate = (data: Array<string>) => {
+const calculateHorizontalAndVerticalLines = (data: Array<string>) => {
   const allLines = parseLines(data)
   const horizontalLines = allLines.filter((l) => l.horizontal)
   const verticalLines = allLines.filter((l) => l.vertical)
@@ -138,7 +160,14 @@ const calculate = (data: Array<string>) => {
   const map: Map = []
   drawLinesToMap(map, lines)
   const crossingLinesCount = calculateCrossingLines(map)
-  // printMap(map)
+  return { crossingLinesCount, map, lines }
+}
+
+const calculateAllLines = (data: Array<string>) => {
+  const lines = parseLines(data)
+  const map: Map = []
+  drawLinesToMap(map, lines)
+  const crossingLinesCount = calculateCrossingLines(map)
   return { crossingLinesCount, map, lines }
 }
 
@@ -148,12 +177,22 @@ const calculate = (data: Array<string>) => {
 export const day5_2021 = () => {
   console.log("2021 Day 5 puzzle 1 example:")
   const exampleData = loadFileRows(2021, 5, "example.txt")
-  const result1 = calculate(exampleData)
+  const result1 = calculateHorizontalAndVerticalLines(exampleData)
   console.log("Lines: (should be 5)", result1.lines.length)
   console.log("Result (should be 5):", result1.crossingLinesCount)
 
   console.log("\n2021 Day 5 puzzle 1:")
   const data = loadFileRows(2021, 5, "data.txt")
-  const result2 = calculate(data)
+  const result2 = calculateHorizontalAndVerticalLines(data)
   console.log("Result:", result2.crossingLinesCount)
+
+  console.log("\n2021 Day 5 puzzle 2 example:")
+  const result3 = calculateAllLines(exampleData)
+  printMap(result3.map)
+  console.log("Lines: (should be 10)", result3.lines.length)
+  console.log("Result (should be 12):", result3.crossingLinesCount)
+
+  console.log("\n2021 Day 5 puzzle 2:")
+  const result4 = calculateAllLines(data)
+  console.log("Result:", result4.crossingLinesCount)
 }
