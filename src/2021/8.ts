@@ -260,12 +260,9 @@ export const day8_2021 = () => {
 
   console.log("\n2021 Day 8 puzzle 2 example:")
   const result3 = calculateAllSignalSum(exampleData)
-  console.log(
-    "How many times do digits 1, 4, 7, or 8 appear (should be 61229):",
-    result3.result
-  )
+  console.log("Sum (should be 61229):", result3.result)
 
   console.log("\n2021 Day 8 puzzle 2:")
   const result4 = calculateAllSignalSum(data)
-  console.log("How many times do digits 1, 4, 7, or 8 appear:", result4.result)
+  console.log("Sum:", result4.result)
 }
