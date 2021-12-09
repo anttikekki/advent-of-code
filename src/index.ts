@@ -14,6 +14,7 @@ import { day5_2021 } from "./2021/5"
 import { day6_2021 } from "./2021/6"
 import { day7_2021 } from "./2021/7"
 import { day8_2021 } from "./2021/8"
+import { day9_2021 } from "./2021/9"
 
 const year = process.argv[2]
 const day = process.argv[3]
@@ -73,6 +74,9 @@ if (year === "2020") {
       break
     case "8":
       day8_2021()
+      break
+    case "9":
+      day9_2021()
       break
     default:
       console.error("Unknown day ", day, " for year 2021")
