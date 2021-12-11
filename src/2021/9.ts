@@ -185,5 +185,5 @@ export const day9_2021 = () => {
 
   console.log("\n2021 Day9 puzzle 2:")
   const result4 = findThreeLargestBasinsAndMultiplySizes(data)
-  console.log("Three largest basins:", result4.result)
+  console.log("Three largest basins (760760 is WRONG ANSWER!):", result4.result)
 }
