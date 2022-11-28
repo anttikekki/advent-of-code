@@ -12,11 +12,11 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "16.11.11",
-    "prettier": "2.5.0",
-    "typescript": "4.5.2"
+    "@types/node": "18.11.9",
+    "prettier": "2.8.0",
+    "typescript": "4.9.3"
   },
   "engines": {
-    "node": "v16.13.0"
+    "node": "v18.12.1"
   }
 }
