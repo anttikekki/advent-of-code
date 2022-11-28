@@ -1,10 +1,10 @@
 # Advent of Code tehtävien suorituksia
 
-Yrityksiä suorittaa [Advent of Code](https://adventofcode.com) joulukalenterin tehtäviä vuosina 2020 ja 2021.
+Yrityksiä suorittaa [Advent of Code](https://adventofcode.com) joulukalenterin tehtäviä vuosina 2020, 2021 ja 2022.
 
 ## Ympäristön pystytys
 
-1. Asenna Node.js 16.13.0
+1. Asenna Node.js 18.12.1
 2. Kloonaa tämä repo
 3. Aja tässä kansiossa `npm i`
 
