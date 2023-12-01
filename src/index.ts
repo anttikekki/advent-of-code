@@ -17,6 +17,7 @@ import { day7_2021 } from "./2021/7"
 import { day8_2021 } from "./2021/8"
 import { day9_2021 } from "./2021/9"
 import { day1_2022 } from "./2022/1"
+import { day1_2023 } from "./2023/1"
 
 const year = process.argv[2]
 const day = process.argv[3]
@@ -90,6 +91,12 @@ if (year === "2020") {
   switch (day) {
     case "1":
       day1_2022()
+      break
+  }
+} else if (year === "2023") {
+  switch (day) {
+    case "1":
+      day1_2023()
       break
   }
 } else {
